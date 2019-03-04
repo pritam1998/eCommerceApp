@@ -1,9 +1,11 @@
-package com.example.PinnacleAnimations.room;
+package com.example.PinnacleAnimations.room.Product;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+
+import com.example.PinnacleAnimations.room.Product.Product;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.r4rooms;
+package com.example.PinnacleAnimations;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.r4rooms;
+package com.example.PinnacleAnimations;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

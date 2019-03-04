@@ -1,13 +1,13 @@
-package com.example.r4rooms.adapter;
+package com.example.PinnacleAnimations.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.r4rooms.fragment.FavoriteFragment;
-import com.example.r4rooms.fragment.HistoryFragment;
-import com.example.r4rooms.fragment.HomeFragment;
-import com.example.r4rooms.fragment.ProfileFragment;
+import com.example.PinnacleAnimations.fragment.CartFragment;
+import com.example.PinnacleAnimations.fragment.OrdersFragment;
+import com.example.PinnacleAnimations.fragment.HomeFragment;
+import com.example.PinnacleAnimations.fragment.ProfileFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
@@ -22,9 +22,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new HomeFragment();
             case 1:
-                return new FavoriteFragment();
+                return new CartFragment();
             case 2:
-                return new HistoryFragment();
+                return new OrdersFragment();
             case 3:
                 return new ProfileFragment();
         }

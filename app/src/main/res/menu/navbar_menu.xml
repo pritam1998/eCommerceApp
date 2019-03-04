@@ -7,13 +7,13 @@
         android:icon="@drawable/ic_home"/>
 
     <item
-        android:id="@+id/nav_favorite"
-        android:title="Favorite"
+        android:id="@+id/nav_cart"
+        android:title="Cart"
         android:icon="@drawable/ic_favorite"/>
 
     <item
-        android:id="@+id/nav_history"
-        android:title="History"
+        android:id="@+id/nav_orders"
+        android:title="Your Orders"
         android:icon="@drawable/ic_history"/>
 
     <item

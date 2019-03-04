@@ -1,4 +1,4 @@
-package com.example.r4rooms.activity;
+package com.example.PinnacleAnimations.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,12 +12,16 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.r4rooms.R;
-import com.example.r4rooms.adapter.ViewPagerAdapter;
+import com.example.PinnacleAnimations.R;
+import com.example.PinnacleAnimations.adapter.ViewPagerAdapter;
+import com.example.PinnacleAnimations.room.Product.Product;
+import com.example.PinnacleAnimations.room.Product.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     MenuItem prevMenuItem;
     DrawerLayout drawerLayout;
     NavigationView navView;
+    Repository repository;
 
 
     @Override
@@ -51,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
@@ -63,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home:
                         viewPager.setCurrentItem(0);
                         return true;
-                    case R.id.favorite:
+                    case R.id.cart:
                         viewPager.setCurrentItem(1);
                         return true;
-                    case R.id.history:
+                    case R.id.orders:
                         viewPager.setCurrentItem(2);
                         return true;
                     case R.id.profile:
@@ -108,23 +114,32 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
-        return true;
-    }
+        repository = Repository.getInstance(this);
+        prepareProductData();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        gotoActivity(getApplicationContext(), LocationActivity.class);
-        return true;
     }
 
     public void gotoActivity(Context context, Class<?> activity){
         Intent intent = new Intent(context, activity);
         startActivity(intent);
+    }
+
+    private void prepareProductData() {
+        List<Product> products = new ArrayList<>();
+        products.add(new Product(R.drawable.tshirt, "Jack & Jones Crew Neck", "Desciption", false, false));
+        products.add(new Product(R.drawable.jacket, "Natty India Woolen", "Desciption", false, false));
+        products.add(new Product(R.drawable.bag, "American Tourister", "Desciption", true, false));
+        products.add(new Product(R.drawable.cargo, "Roadster Cargo", "Desciption", false, false));
+        products.add(new Product(R.drawable.laptop, "Hp Laptop", "Desciption", false, false));
+        products.add(new Product(R.drawable.shoes, "Adidas Sneakers", "Desciption", false, false));
+        products.add(new Product(R.drawable.speaker, "Mi Bluetooth Speakers", "Desciption", false, false));
+        products.add(new Product(R.drawable.watch, "FasTrack watch", "Desciption", false, false));
+
+        for (int i = 0, size = products.size(); i < size; i++) {
+            repository.insertProduct(products.get(i));
+        }
+
     }
 
 }

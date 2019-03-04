@@ -1,4 +1,4 @@
-package com.example.r4rooms.fragment;
+package com.example.PinnacleAnimations.fragment;
 
 
 import android.os.Bundle;
@@ -6,9 +6,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.r4rooms.R;
+import com.bumptech.glide.Glide;
+import com.example.PinnacleAnimations.R;
 
 
 /**
@@ -17,8 +20,8 @@ import com.example.r4rooms.R;
 public class ProfileFragment extends Fragment {
 
     View view;
-    TextView textView;
-
+    ImageView profileImg;
+    Button loginBtn;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -30,7 +33,10 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view =inflater.inflate(R.layout.fragment_profile, container, false);
-        textView = view.findViewById(R.id.tv4);
+        profileImg = view.findViewById(R.id.profileImg);
+        loginBtn = view.findViewById(R.id.loginBtn);
+        Glide.with(this).load(R.drawable.pinacle).into(profileImg);
+
         return view;
     }
 
