@@ -1,4 +1,4 @@
-package com.example.r4rooms;
+package com.example.PinnacleAnimations.fragment;
 
 
 import android.os.Bundle;
@@ -8,17 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.PinnacleAnimations.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HistoryFragment extends Fragment {
+public class FavoriteFragment extends Fragment {
 
     View view;
     TextView textView;
 
-
-    public HistoryFragment() {
+    public FavoriteFragment() {
         // Required empty public constructor
     }
 
@@ -27,8 +28,8 @@ public class HistoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_history, container, false);
-        textView = view.findViewById(R.id.tv3);
+        view =  inflater.inflate(R.layout.fragment_favorite, container, false);
+        textView = view.findViewById(R.id.tv2);
         return view;
     }
 

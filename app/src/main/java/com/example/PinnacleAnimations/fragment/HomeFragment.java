@@ -1,4 +1,4 @@
-package com.example.r4rooms;
+package com.example.r4rooms.fragment;
 
 
 import android.os.Bundle;
@@ -8,16 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.r4rooms.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class FavoriteFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
     View view;
     TextView textView;
 
-    public FavoriteFragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -25,9 +23,10 @@ public class FavoriteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.fragment_favorite, container, false);
-        textView = view.findViewById(R.id.tv2);
+
+        view =  inflater.inflate(R.layout.fragment_home, container, false);
+        textView = view.findViewById(R.id.tv1);
+
         return view;
     }
 

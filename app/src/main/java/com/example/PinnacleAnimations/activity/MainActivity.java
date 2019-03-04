@@ -1,4 +1,4 @@
-package com.example.r4rooms;
+package com.example.r4rooms.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+
+import com.example.r4rooms.R;
+import com.example.r4rooms.adapter.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

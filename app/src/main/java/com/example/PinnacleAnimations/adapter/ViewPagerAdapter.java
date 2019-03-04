@@ -1,8 +1,13 @@
-package com.example.r4rooms;
+package com.example.r4rooms.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.example.r4rooms.fragment.FavoriteFragment;
+import com.example.r4rooms.fragment.HistoryFragment;
+import com.example.r4rooms.fragment.HomeFragment;
+import com.example.r4rooms.fragment.ProfileFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
